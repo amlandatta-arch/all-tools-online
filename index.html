@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AllToolsOnline — All Tools</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="AllToolsOnline — 200+ free online tools and calculators across text, developer, design, SEO, file, education and utility categories. No sign-ups, fast and lightweight." />
+  <meta name="keywords" content="online tools, free tools, calculators, text tools, developer tools, seo tools, pdf tools, converters, AllToolsOnline" />
+  <meta name="author" content="AllToolsOnline" />
+  <link rel="canonical" href="https://www.alltoolsonline.example/" />
+
+  <!-- JSON-LD Organization (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AllToolsOnline",
+    "url": "https://www.alltoolsonline.example/",
+    "description": "200+ free online tools and calculators across many categories. No sign-up required.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AllToolsOnline"
+    }
+  }
+  </script>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --bg: #f7fafc; --card: #ffffff; --muted: #6b7280; }
+    [data-theme="dark"] { --bg: #0b1220; --card: #071022; --muted: #9ca3af; color-scheme: dark; }
+    body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    .tool-card { transition: transform .14s ease, box-shadow .14s ease; }
+    .tool-card:focus-within, .tool-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(15,23,42,0.08); }
+    .category-title { border-left: 4px solid rgba(99,102,241,0.14); padding-left: .75rem; }
+    .search-icon { margin-left: -2.5rem; pointer-events: none; opacity: .6; }
+    
+    /* Mobile responsiveness improvements */
+    @media (max-width: 767px) {
+      .hero-illustration { height: 220px; border-radius: 16px; }
+      header .flex { gap: 0.5rem; }
+      header .w-48 { width: auto; min-width: 0; flex-shrink: 1; }
+      header .text-lg { font-size: 0.9rem; }
+      header .w-10 { width: 2rem; height: 2rem; font-size: 0.75rem; }
+      #header-search { display: none; }
+      main { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+      .hero-section { padding: 1rem !important; }
+      .hero-section h1 { font-size: 1.75rem; line-height: 1.2; }
+      .hero-section p { font-size: 0.875rem; }
+      .tool-card { padding: 0.75rem; }
+      .tool-card .text-2xl { font-size: 1.5rem; }
+      .tool-card .font-semibold { font-size: 0.813rem; }
+      .tool-card .text-xs { font-size: 0.688rem; }
+      footer { padding: 1.5rem 0; }
+      footer .flex-col { text-align: center; }
+    }
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid.lg\:grid-cols-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+
+  <!-- Google Tag Manager (as high as possible in head) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WJ7765FV');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLEW4JXY4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9NLEW4JXY4');
+  </script>
+</head>
+
+<body class="min-h-screen text-gray-800" data-theme="light">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ7765FV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header class="sticky top-0 backdrop-blur bg-white/60 dark:bg-[#071022]/60 border-b border-gray-200 dark:border-gray-800 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-4 h-16">
+        <!-- Logo -->
+        <div class="flex items-center w-48">
+          <a href="#" class="flex items-center gap-2" aria-label="AllToolsOnline home">
+            <div class="rounded-md bg-gradient-to-br from-indigo-500 to-purple-500 w-10 h-10 flex items-center justify-center text-white font-bold">AT</div>
+            <div class="text-lg font-semibold">AllToolsOnline</div>
+          </a>
+        </div>
+
+        <!-- Center search -->
+        <div class="flex-1">
+          <form id="header-search" class="relative" role="search" aria-label="Search tools form">
+            <input id="search-input" type="search" placeholder="Search tools..." aria-label="Search tools" class="w-full rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#071022] px-4 py-3 pr-32 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <button id="search-btn" type="submit" class="absolute right-1.5 top-1.5 bg-indigo-600 text-white rounded-full px-4 py-2 text-sm shadow hover:brightness-105">Search</button>
+          </form>
+        </div>
+
+        <!-- Nav & theme -->
+        <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          <a href="#" class="text-sm font-medium hover:text-indigo-600">Home</a>
+          <a href="#categories" class="text-sm font-medium hover:text-indigo-600">Categories</a>
+          <a href="about.html" class="text-sm font-medium hover:text-indigo-600">About</a>
+          <a href="contact.html" class="text-sm font-medium hover:text-indigo-600">Contact</a>
+
+          <!-- Theme toggle -->
+          <button id="theme-toggle" class="p-2 rounded-full border border-gray-200 dark:border-gray-700" title="Toggle theme" aria-pressed="false">
+            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <!-- Sun icon by default -->
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.36 6.36-1.41-1.41M7.05 7.05 5.64 5.64m12.72 0L18.36 7.05M7.05 16.95 5.64 18.36" />
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-toggle" class="p-2 rounded-md border border-gray-200 dark:border-gray-700" aria-expanded="false" aria-controls="mobile-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="md:hidden hidden border-t border-gray-100 dark:border-gray-800" role="menu" aria-hidden="true">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#" class="py-2">Home</a>
+        <a href="#categories" class="py-2">Categories</a>
+        <a href="about.html" class="py-2">About</a>
+        <a href="contact.html" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="hero-section bg-gradient-to-br from-white to-indigo-50 dark:from-[#071022] dark:to-[#071A2B] rounded-2xl p-6 md:p-12 shadow-sm">
+      <div class="md:flex md:items-center md:justify-between gap-8">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">One place for every tool you need.</h1>
+          <p class="mt-3 text-base text-gray-600 dark:text-gray-300">Free online tools and calculators to make your daily tasks easier.</p>
+          <div class="mt-6">
+            <form id="hero-search" class="flex gap-2" role="search" aria-label="Hero search form">
+              <input id="hero-search-input" type="search" placeholder="Search tools..." class="flex-1 rounded-full border border-gray-200 dark:border-gray-700 px-4 py-3 focus:outline-none" />
+              <button id="hero-search-btn" type="submit" class="rounded-full bg-indigo-600 text-white px-5 py-2.5 font-semibold whitespace-nowrap">Search</button>
+            </form>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Tip: try "password" or "calculator" to quickly filter tools.</p>
+          </div>
+        </div>
+
+        <!-- Right: Inline SVG Illustration (responsive) -->
+        <div class="hidden md:block" aria-hidden="true">
+          <div class="w-56 h-40 hero-illustration rounded-xl flex items-center justify-center">
+            <!-- Inline SVG: modern tools/dashboard illustration -->
+            <svg viewBox="0 0 220 150" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tools illustration">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#6366f1" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.9"/>
+                </linearGradient>
+                <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#7c3aed" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="#ec4899" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+
+              <!-- background rounded card -->
+              <rect x="6" y="6" rx="14" ry="14" width="208" height="138" fill="url(#g1)" opacity="0.12"></rect>
+
+              <!-- small cards -->
+              <rect x="18" y="18" rx="6" ry="6" width="66" height="36" fill="#fff" opacity="0.95"></rect>
+              <rect x="96" y="18" rx="6" ry="6" width="106" height="22" fill="#fff" opacity="0.95"></rect>
+
+              <!-- icons / lines for the small cards -->
+              <rect x="24" y="26" width="12" height="12" rx="2" fill="url(#g2)"></rect>
+              <rect x="42" y="26" width="36" height="10" rx="3" fill="#e6e9f8"></rect>
+
+              <rect x="102" y="22" width="14" height="14" rx="3" fill="url(#g2)"></rect>
+              <rect x="122" y="24" width="66" height="10" rx="3" fill="#e6e9f8"></rect>
+
+              <!-- larger central panel -->
+              <rect x="18" y="64" rx="8" ry="8" width="184" height="58" fill="#fff" opacity="0.98"></rect>
+
+              <!-- small gauges / circles -->
+              <circle cx="46" cy="92" r="10" fill="url(#g2)"></circle>
+              <rect x="60" y="82" width="90" height="12" rx="6" fill="#eef2ff"></rect>
+
+              <circle cx="166" cy="92" r="8" fill="#fce7f3"></circle>
+              <rect x="130" y="86" width="28" height="8" rx="4" fill="#ffe6f3"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories" class="mt-10 space-y-10">
+      <!-- categories generated by JS -->
+      <div id="categories-container" class="space-y-12"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-white/50 dark:bg-[#071022]/50" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600 dark:text-gray-400">© <span id="year"></span> AllToolsOnline. All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <a href="privacy.html" class="text-sm hover:underline">Privacy Policy</a>
+        <a href="terms.html" class="text-sm hover:underline">Terms</a>
+        <a href="contact.html" class="text-sm hover:underline">Contact</a>
+      </div>
+      <div class="text-sm text-gray-600 dark:text-gray-400">Built with ❤️ by AllToolsOnline</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/tools-data.js"></script>
+  <script>
+    // Generate slug helper
+    function generateSlug(name) {
+      return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    // Render categories and tools
+    const container = document.getElementById('categories-container');
+
+    function createToolCard(tool, categoryId) {
+      const [name, desc, icon] = tool;
+      const slug = generateSlug(name);
+      const card = document.createElement('a');
+      card.href = `tools/${categoryId}/${slug}.html`;
+      card.className = 'tool-card group block bg-white dark:bg-[#071022] border border-gray-100 dark:border-gray-800 rounded-2xl p-4 transition';
+      card.innerHTML = `
+        <div class="flex items-start gap-3">
+          <div class="text-2xl">${icon || '🧰'}</div>
+          <div class="flex-1">
+            <div class="font-semibold text-sm">${name}</div>
+            <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">${desc}</div>
+          </div>
+          <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+        </div>
+      `;
+      return card;
+    }
+
+    function renderCategories(filter = '') {
+      container.innerHTML = '';
+      const q = filter.trim().toLowerCase();
+
+      categories.forEach(cat => {
+        // Filter tools if searching
+        const filteredTools = q ? cat.tools.filter(t => (t[0] + ' ' + t[1]).toLowerCase().includes(q)) : cat.tools;
+        if (filteredTools.length === 0) return; // skip category if nothing matches
+
+        const sec = document.createElement('section');
+        sec.className = 'category';
+
+        sec.innerHTML = `
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold category-title">${cat.title}</h2>
+            <div class="text-sm text-gray-500 dark:text-gray-400">${filteredTools.length} tools</div>
+          </div>
+        `;
+
+        const grid = document.createElement('div');
+        // responsive grid: 1 col mobile, 2 md, 4 lg
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4';
+
+        filteredTools.forEach(tool => {
+          grid.appendChild(createToolCard(tool, cat.id));
+        });
+
+        sec.appendChild(grid);
+        container.appendChild(sec);
+      });
+    }
+
+    // initial render
+    renderCategories();
+
+    // Search handling (both header and hero)
+    const headerForm = document.getElementById('header-search');
+    const heroForm = document.getElementById('hero-search');
+    const headerInput = document.getElementById('search-input');
+    const heroInput = document.getElementById('hero-search-input');
+
+    function doSearchQuery(q) {
+      renderCategories(q);
+      // scroll to categories if not visible
+      document.getElementById('categories').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    headerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      doSearchQuery(headerInput.value || '');
+    });
+    heroForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      doSearchQuery(heroInput.value || '');
+      headerInput.value = heroInput.value; // mirror to header
+    });
+
+    // Also allow search button next to header input (already submit)
+    document.getElementById('search-btn').addEventListener('click', (e) => {
+      // button submits the form naturally
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const root = document.body;
+      const current = root.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+
+      // swap icon (simple)
+      const icon = document.getElementById('theme-icon');
+      if (next === 'dark') {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+        themeToggle.setAttribute('aria-pressed','true');
+      } else {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.36 6.36-1.41-1.41M7.05 7.05 5.64 5.64m12.72 0L18.36 7.05M7.05 16.95 5.64 18.36" />';
+        themeToggle.setAttribute('aria-pressed','false');
+      }
+    });
+
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Keyboard shortcut: "/" focuses header search
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        headerInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
