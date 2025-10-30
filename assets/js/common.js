@@ -40,19 +40,12 @@ function loadHeader() {
             </form>
           </div>
 
-          <!-- Nav & theme -->
+          <!-- Nav -->
           <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
             <a href="${basePath}index.html" class="text-sm font-medium hover:text-indigo-600">Home</a>
             <a href="${basePath}categories.html" class="text-sm font-medium hover:text-indigo-600">Categories</a>
             <a href="${basePath}about.html" class="text-sm font-medium hover:text-indigo-600">About</a>
             <a href="${basePath}contact.html" class="text-sm font-medium hover:text-indigo-600">Contact</a>
-
-            <!-- Theme toggle -->
-            <button id="theme-toggle" class="p-2 rounded-full border border-gray-200 dark:border-gray-700" title="Toggle theme" aria-pressed="false">
-              <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.36 6.36-1.41-1.41M7.05 7.05 5.64 5.64m12.72 0L18.36 7.05M7.05 16.95 5.64 18.36" />
-              </svg>
-            </button>
           </nav>
 
           <!-- Mobile menu button -->
@@ -109,33 +102,10 @@ function loadFooter() {
 
 // Initialize header events
 function initHeaderEvents() {
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  
-  // Load saved theme - always default to light if no preference saved
-  const savedTheme = localStorage.getItem('theme');
-  const theme = savedTheme ? savedTheme : 'light';
-  document.body.setAttribute('data-theme', theme);
-  updateThemeIcon(theme);
-  
-  themeToggle.addEventListener('click', () => {
-    const current = document.body.getAttribute('data-theme') || 'light';
-    const next = current === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    updateThemeIcon(next);
-  });
-  
-  function updateThemeIcon(theme) {
-    if (theme === 'dark') {
-      themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
-      themeToggle.setAttribute('aria-pressed', 'true');
-    } else {
-      themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.36 6.36-1.41-1.41M7.05 7.05 5.64 5.64m12.72 0L18.36 7.05M7.05 16.95 5.64 18.36" />';
-      themeToggle.setAttribute('aria-pressed', 'false');
-    }
-  }
+  // Force light theme only
+  document.body.setAttribute('data-theme', 'light');
+  document.documentElement.setAttribute('data-theme', 'light');
+  localStorage.removeItem('theme'); // Clear any saved theme preference
   
   // Mobile nav toggle
   const mobileToggle = document.getElementById('mobile-toggle');
