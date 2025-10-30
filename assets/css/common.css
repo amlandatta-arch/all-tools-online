@@ -12,8 +12,8 @@ html, body {
 
 [data-theme="dark"] { 
   --bg: #0b1220; 
-  --card: #071022; 
-  --muted: #9ca3af; 
+  --card: #1a2332; 
+  --muted: #d1d5db; 
   color-scheme: dark; 
 }
 
@@ -21,6 +21,97 @@ html, body {
 [data-theme="dark"] body {
   background: #0b1220;
   color: #f3f4f6;
+}
+
+/* Dark mode text improvements */
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-700 {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .text-gray-800,
+[data-theme="dark"] .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #f9fafb !important;
+}
+
+[data-theme="dark"] p {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #1a2332 !important;
+}
+
+[data-theme="dark"] .border-gray-200 {
+  border-color: #374151 !important;
+}
+
+[data-theme="dark"] .border-gray-100 {
+  border-color: #374151 !important;
+}
+
+/* Dark mode - All text elements */
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] label,
+[data-theme="dark"] li,
+[data-theme="dark"] a {
+  color: inherit;
+}
+
+[data-theme="dark"] .text-xs,
+[data-theme="dark"] .text-sm,
+[data-theme="dark"] .text-base {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] .font-semibold,
+[data-theme="dark"] .font-bold {
+  color: #f3f4f6 !important;
+}
+
+/* Dark mode - Specific elements */
+[data-theme="dark"] .prose {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .prose p,
+[data-theme="dark"] .prose li,
+[data-theme="dark"] .prose ol,
+[data-theme="dark"] .prose ul {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] .dark\:text-gray-300,
+[data-theme="dark"] .dark\:text-gray-400 {
+  color: #d1d5db !important;
+}
+
+/* Dark mode - Tool cards */
+[data-theme="dark"] .tool-card {
+  background-color: #1a2332 !important;
+  border-color: #374151 !important;
+}
+
+[data-theme="dark"] .tool-card .text-xs {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .tool-card .font-semibold {
+  color: #f3f4f6 !important;
 }
 
 body { 
@@ -167,12 +258,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #1f2937;
+}
+
+[data-theme="dark"] .faq-question {
+  color: #f3f4f6 !important;
 }
 
 .faq-answer {
   margin-top: 0.5rem;
   color: #6b7280;
   display: none;
+}
+
+[data-theme="dark"] .faq-answer {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] .faq-answer p {
+  color: #d1d5db !important;
 }
 
 .faq-answer.active {
