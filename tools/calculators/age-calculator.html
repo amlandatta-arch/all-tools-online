@@ -7,14 +7,14 @@
 
 <title>Advanced Age Calculator | Exact Age & Date Difference</title>
 
-<meta name="description" content="Find your exact age in years, months, and days. Compare two dates — default is today — and get hours, minutes and seconds too." />
+<meta name="description" content="Find your exact age in years, months, days, hours, minutes and seconds. Compare two dates — default is today — with this free online age calculator." />
 <meta name="keywords" content="age calculator, date difference, birthday calculator, age in years months days hours minutes seconds, online calculator" />
 <meta name="author" content="AllToolsOnline" />
 <link rel="canonical" href="https://www.alltoolsonline.example/tools/calculators/age-calculator.html" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Advanced Age Calculator | Exact Age & Date Difference" />
-<meta property="og:description" content="Free online age calculator to find your exact age and detailed time breakdown." />
+<meta property="og:description" content="Free online age calculator to find your exact age, next birthday, and detailed time breakdown." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.alltoolsonline.example/tools/calculators/age-calculator.html" />
 <meta property="og:site_name" content="AllToolsOnline" />
@@ -101,13 +101,9 @@ gtag('config', 'G-9NLEW4JXY4');
         <p class="text-gray-600">Calculate exact age in years, months and days. Compare dates — default is today — and get hours, minutes and seconds too.</p>
       </div>
 
-      <!-- Tool Interface: ***FORM UPDATED ONLY*** (centered) -->
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mx-auto max-w-2xl">
+      <!-- Tool Interface: ***FORM UPDATED ONLY*** -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
         <div class="space-y-6">
-          <!-- Hidden native date inputs used to open browser datepicker -->
-          <input type="date" id="hiddenDobPicker" style="display:none" aria-hidden="true">
-          <input type="date" id="hiddenToPicker" style="display:none" aria-hidden="true">
-
           <!-- Date of Birth -->
           <div>
             <label class="block text-sm font-medium mb-2">Date of Birth</label>
@@ -124,15 +120,12 @@ gtag('config', 'G-9NLEW4JXY4');
               </select>
               <input type="number" id="dobYear" placeholder="YYYY" min="1900" max="2100"
                 class="w-28 text-center border border-gray-300 rounded-lg py-2 px-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
-              <!-- Operational calendar icon - opens native date picker -->
-              <button type="button" id="dobCalBtn" aria-label="Open date picker for Date of Birth"
-                class="ml-1 p-1 rounded text-gray-400 hover:text-gray-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-              </button>
+              <!-- Static calendar icon -->
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
             </div>
           </div>
 
@@ -152,17 +145,288 @@ gtag('config', 'G-9NLEW4JXY4');
               </select>
               <input type="number" id="toYear" placeholder="YYYY" min="1900" max="2100"
                 class="w-28 text-center border border-gray-300 rounded-lg py-2 px-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" />
-              <!-- Operational calendar icon - opens native date picker for Age-at -->
-              <button type="button" id="toCalBtn" aria-label="Open date picker for Age at the Date of"
-                class="ml-1 p-1 rounded text-gray-400 hover:text-gray-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-              </button>
+              <!-- Static calendar icon -->
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span class="text-xs text-gray-500 ml-2">Defaults to today — change if needed</span>
             </div>
           </div>
 
           <!-- Buttons -->
-          <div
+          <div class="flex gap-3">
+            <button onclick="calculateAge()" class="tool-button flex-1">Calculate Age</button>
+            <button onclick="clearInputs()" class="tool-button bg-gray-100 text-gray-800">Clear</button>
+          </div>
+
+          <div id="result" class="result-box hidden"></div>
+        </div>
+      </div>
+
+      <!-- SEO Content (approx 500 words) -->
+      <article class="mt-8 prose max-w-none">
+        <h2 class="text-2xl font-bold mb-3">What this calculator does</h2>
+        <p>
+          This tool gives a precise breakdown of your age between two dates. Enter a date of birth and — by default — the calculator compares it to today’s date. You can change the second date to any past or future date to see the exact difference in years, months and days, plus totals in days, weeks, hours, minutes and seconds.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">When to use it</h3>
+        <p>
+          Use it for official checks (eligibility for exams, age-restricted forms), event planning (countdown to anniversaries), calculating service duration, or simple curiosity — for example, “How many seconds old am I?” Because the calculations run locally in your browser, nothing you enter is sent to a server.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Examples</h3>
+        <p>
+          If you were born on May 17, 1990, and today is the comparison date, the tool will show your age as X years, Y months and Z days and also show totals like N days, M hours and S seconds. For historical comparisons you can change the “Age at the Date of” fields to any date to get an exact difference.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Accuracy</h3>
+        <p>
+          Calculations use JavaScript Date logic and respect calendar month lengths and leap years. Totals (days, weeks, hours, minutes, seconds) are calculated from the precise millisecond difference between dates so you get accurate aggregate values as well as calendar-correct Y/M/D splits.
+        </p>
+      </article>
+
+      <!-- FAQ Section (expanded, quality Q&A) -->
+      <section class="mt-8">
+        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-4">
+
+          <div>
+            <div class="font-semibold">Q: Can I compare two historical dates (not including today)?</div>
+            <div class="text-gray-700 mt-1">A: Yes. Change the "Age at the Date of" fields to any date and the tool will compute the exact difference. By default those fields show today's date for convenience.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Q: Why do totals (months/days) sometimes differ from a year-month-day breakdown?</div>
+            <div class="text-gray-700 mt-1">A: The Y/M/D split follows calendar month lengths (28–31 days). Totals (days, hours, seconds) are aggregate values derived from the exact millisecond difference — both are useful and shown for clarity.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Q: Are leap years handled correctly?</div>
+            <div class="text-gray-700 mt-1">A: Yes. Leap days are included because the calculation is based on JavaScript dates which account for February 29 where applicable.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Q: Is my date of birth stored on your servers?</div>
+            <div class="text-gray-700 mt-1">A: No. All calculations happen locally in your browser and nothing is uploaded or logged by this site.</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Q: Which calendar is used?</div>
+            <div class="text-gray-700 mt-1">A: The modern Gregorian calendar. For very old historical dates this uses the proleptic Gregorian calendar (standard for web date calculations).</div>
+          </div>
+
+          <div>
+            <div class="font-semibold">Q: Can I copy or share the result?</div>
+            <div class="text-gray-700 mt-1">A: Yes — select the result text and copy, or use your browser's share features. If you want a one-click copy button added, tell me and I'll include it.</div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar (Similar Tools - preserved as-is) -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 sticky top-20">
+        <h3 class="text-lg font-semibold mb-4">Similar Tools</h3>
+        <div class="space-y-3">
+          <a href="percentage-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">%</div>
+              <div class="flex-1">
+                <div class="font-semibold text-sm">Percentage Calculator</div>
+                <div class="mt-1 text-xs text-gray-500">Quick percent calculations</div>
+              </div>
+              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+            </div>
+          </a>
+
+          <a href="bmi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">⚖️</div>
+              <div class="flex-1">
+                <div class="font-semibold text-sm">BMI Calculator</div>
+                <div class="mt-1 text-xs text-gray-500">Body Mass Index calculator</div>
+              </div>
+              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+            </div>
+          </a>
+
+          <a href="loan-emi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">🏦</div>
+              <div class="flex-1">
+                <div class="font-semibold text-sm">Loan EMI Calculator</div>
+                <div class="mt-1 text-xs text-gray-500">Monthly EMI estimates</div>
+              </div>
+              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+            </div>
+          </a>
+
+          <a href="simple-interest-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+            <div class="flex items-start gap-3">
+              <div class="text-2xl">📈</div>
+              <div class="flex-1">
+                <div class="font-semibold text-sm">Simple Interest Calculator</div>
+                <div class="mt-1 text-xs text-gray-500">Simple interest on principal</div>
+              </div>
+              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+            </div>
+          </a>
+
+        </div>
+
+        <a href="../../categories.html#calculators" class="block mt-4 text-center text-sm text-indigo-600 hover:text-indigo-700 font-medium">View all Calculators →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="../../assets/js/common.js"></script>
+
+<script>
+/* Only script changes related to the new form - everything else unchanged */
+
+/* Populate default values & helper initialization */
+document.addEventListener('DOMContentLoaded', function() {
+  const dobDay = document.getElementById('dobDay');
+  const dobMonth = document.getElementById('dobMonth');
+  const dobYear = document.getElementById('dobYear');
+  const toDay = document.getElementById('toDay');
+  const toMonth = document.getElementById('toMonth');
+  const toYear = document.getElementById('toYear');
+
+  // Populate reasonable year ranges for DOB and toYear (1900..current)
+  const currentYear = new Date().getFullYear();
+  // If DOB year is empty, user will select manually - we don't auto-set DOB fields.
+  // But set placeholders already in inputs from HTML.
+  // Default the "Age at the Date of" to today's date:
+  const today = new Date();
+  toDay.value = today.getDate();
+  toMonth.value = today.getMonth();
+  toYear.value = today.getFullYear();
+
+  // Optional: ensure month selects have default blank option (already present)
+  // No further DOM tweaks to preserve page style.
+});
+
+/* Calculation function for the new form layout */
+function calculateAge() {
+  const dobDayEl = document.getElementById('dobDay');
+  const dobMonthEl = document.getElementById('dobMonth');
+  const dobYearEl = document.getElementById('dobYear');
+  const toDayEl = document.getElementById('toDay');
+  const toMonthEl = document.getElementById('toMonth');
+  const toYearEl = document.getElementById('toYear');
+  const resultBox = document.getElementById('result');
+
+  const dd = parseInt(dobDayEl.value, 10);
+  const mm = dobMonthEl.value === "" ? NaN : parseInt(dobMonthEl.value, 10);
+  const yy = parseInt(dobYearEl.value, 10);
+
+  // Age-at date values: if any of the three are empty, use today's date
+  const tdd = parseInt(toDayEl.value, 10);
+  const tmm = toMonthEl.value === "" ? NaN : parseInt(toMonthEl.value, 10);
+  const tyy = parseInt(toYearEl.value, 10);
+
+  if (!dd || isNaN(mm) || !yy) {
+    resultBox.innerHTML = '<p class="text-red-500">Please enter a valid Date of Birth (day, month and year).</p>';
+    resultBox.classList.remove('hidden');
+    return;
+  }
+
+  const birthDate = new Date(yy, mm, dd, 0, 0, 0, 0);
+
+  let compareDate;
+  if (!isNaN(tdd) && !isNaN(tmm) && !isNaN(tyy)) {
+    compareDate = new Date(tyy, tmm, tdd, 0, 0, 0, 0);
+  } else {
+    compareDate = new Date(); // default to now if any field missing
+  }
+
+  // If compareDate is still invalid for any reason, fallback to now
+  if (!(compareDate instanceof Date) || isNaN(compareDate.getTime())) compareDate = new Date();
+
+  if (compareDate < birthDate) {
+    resultBox.innerHTML = '<p class="text-red-500">The comparison date cannot be before the birth date.</p>';
+    resultBox.classList.remove('hidden');
+    return;
+  }
+
+  // Calculate years, months, days (calendar-accurate)
+  let years = compareDate.getFullYear() - birthDate.getFullYear();
+  let months = compareDate.getMonth() - birthDate.getMonth();
+  let days = compareDate.getDate() - birthDate.getDate();
+
+  if (days < 0) {
+    months--;
+    // days in previous month relative to compareDate
+    const prevMonthLastDay = new Date(compareDate.getFullYear(), compareDate.getMonth(), 0).getDate();
+    days += prevMonthLastDay;
+  }
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  // Totals (from millisecond difference)
+  const diffMs = compareDate.getTime() - birthDate.getTime();
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const totalHours = Math.floor(totalMinutes / 60);
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const totalWeeks = Math.floor(totalDays / 7);
+
+  // Weekday born on and days until next birthday (relative to compareDate)
+  const birthWeekday = birthDate.toLocaleString('default', { weekday: 'long' });
+  let nextBirthday = new Date(compareDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+  if (nextBirthday < compareDate) nextBirthday.setFullYear(compareDate.getFullYear() + 1);
+  const daysUntilBirthday = Math.ceil((nextBirthday - compareDate) / (1000 * 60 * 60 * 24));
+
+  // Render results (no zodiac)
+  resultBox.innerHTML = `
+    <div class="text-center space-y-2">
+      <div class="text-2xl font-bold text-indigo-600">${years} years, ${months} months, ${days} days</div>
+      <p class="text-gray-700">Total: ${totalDays.toLocaleString()} days | ${totalWeeks.toLocaleString()} weeks</p>
+      <p class="text-gray-700">≈ ${totalHours.toLocaleString()} hours | ${totalMinutes.toLocaleString()} minutes | ${totalSeconds.toLocaleString()} seconds</p>
+      <p class="mt-2 text-gray-700">Born on: <strong>${birthWeekday}</strong></p>
+      <p class="mt-2 text-gray-600">Next birthday in ${daysUntilBirthday} days</p>
+    </div>
+  `;
+  resultBox.classList.remove('hidden');
+}
+
+/* Clear: reset DOB fields and set Age-at date back to today (per requirement that Age-at defaults to today) */
+function clearInputs() {
+  document.getElementById('dobDay').value = '';
+  document.getElementById('dobMonth').value = '';
+  document.getElementById('dobYear').value = '';
+
+  const today = new Date();
+  document.getElementById('toDay').value = today.getDate();
+  document.getElementById('toMonth').value = today.getMonth();
+  document.getElementById('toYear').value = today.getFullYear();
+
+  const resultBox = document.getElementById('result');
+  resultBox.innerHTML = '';
+  resultBox.classList.add('hidden');
+}
+
+/* Reveal result zone if other scripts write to it */
+document.addEventListener('DOMContentLoaded', function() {
+  const resultBox = document.getElementById('result');
+  if (resultBox) {
+    const observer = new MutationObserver(function() {
+      if (resultBox.innerHTML.trim() !== '') resultBox.classList.remove('hidden');
+    });
+    observer.observe(resultBox, { childList: true, subtree: true });
+  }
+});
+</script>
+</body>
+</html>
