@@ -21,7 +21,7 @@ function getBasePath() {
 function loadHeader() {
   const basePath = getBasePath();
   const headerHTML = `
-    <header class="sticky top-0 backdrop-blur bg-white/60 dark:bg-[#071022]/60 border-b border-gray-200 dark:border-gray-800 z-30">
+    <header class="sticky top-0 backdrop-blur bg-white/60 border-b border-gray-200 z-30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4 h-16">
           <!-- Logo -->
@@ -35,7 +35,7 @@ function loadHeader() {
           <!-- Center search -->
           <div class="flex-1">
             <form id="header-search" class="relative" role="search" aria-label="Search tools form">
-              <input id="search-input" type="search" placeholder="Search tools..." aria-label="Search tools" class="w-full rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#071022] px-4 py-3 pr-32 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+              <input id="search-input" type="search" placeholder="Search tools..." aria-label="Search tools" class="w-full rounded-full border border-gray-200 bg-white px-4 py-3 pr-32 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
               <button id="search-btn" type="submit" class="absolute right-1.5 top-1.5 bg-indigo-600 text-white rounded-full px-4 py-2 text-sm shadow hover:brightness-105">Search</button>
             </form>
           </div>
@@ -50,7 +50,7 @@ function loadHeader() {
 
           <!-- Mobile menu button -->
           <div class="md:hidden">
-            <button id="mobile-toggle" class="p-2 rounded-md border border-gray-200 dark:border-gray-700" aria-expanded="false" aria-controls="mobile-nav">
+            <button id="mobile-toggle" class="p-2 rounded-md border border-gray-200" aria-expanded="false" aria-controls="mobile-nav">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
           </div>
@@ -58,7 +58,7 @@ function loadHeader() {
       </div>
 
       <!-- Mobile nav -->
-      <div id="mobile-nav" class="md:hidden hidden border-t border-gray-100 dark:border-gray-800" role="menu" aria-hidden="true">
+      <div id="mobile-nav" class="md:hidden hidden border-t border-gray-100" role="menu" aria-hidden="true">
         <div class="px-4 py-3 flex flex-col gap-2">
           <a href="${basePath}index.html" class="py-2">Home</a>
           <a href="${basePath}categories.html" class="py-2">Categories</a>
@@ -81,15 +81,15 @@ function loadFooter() {
   const basePath = getBasePath();
   const currentYear = new Date().getFullYear();
   const footerHTML = `
-    <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-white/50 dark:bg-[#071022]/50" role="contentinfo">
+    <footer class="border-t border-gray-200 mt-12 py-8 bg-white/50" role="contentinfo">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="text-sm text-gray-600 dark:text-gray-400">© ${currentYear} AllToolsOnline. All rights reserved.</div>
+        <div class="text-sm text-gray-600">© ${currentYear} AllToolsOnline. All rights reserved.</div>
         <div class="flex items-center gap-4">
           <a href="${basePath}privacy.html" class="text-sm hover:underline">Privacy Policy</a>
           <a href="${basePath}terms.html" class="text-sm hover:underline">Terms</a>
           <a href="${basePath}contact.html" class="text-sm hover:underline">Contact</a>
         </div>
-        <div class="text-sm text-gray-600 dark:text-gray-400">Built with ❤️ by AllToolsOnline</div>
+        <div class="text-sm text-gray-600">Built with ❤️ by AllToolsOnline</div>
       </div>
     </footer>
   `;
