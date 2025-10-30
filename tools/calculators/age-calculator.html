@@ -1,351 +1,266 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="color-scheme" content="light only" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <title>Age Calculator - Calculate Exact Age in Years, Months, Days</title>
+  <meta name="description" content="Free online age calculator to find your exact age in years, months, days, hours, minutes, and seconds. Simple, accurate, and fast age calculator with instant results." />
+  <meta name="keywords" content="age calculator, calculate age, online age calculator, date of birth calculator, DOB calculator, how old am I" />
+  <meta name="author" content="AllToolsOnline" />
+  <link rel="canonical" href="https://www.alltoolsonline.example/tools/calculators/age-calculator.html" />
 
-<title>Advanced Age Calculator | Exact Age & Date Difference</title>
-
-<meta name="description" content="Find your exact age in years, months, and days. Compare two dates, check next birthday and zodiac sign instantly with our free age calculator." />
-<meta name="keywords" content="age calculator, date difference, birthday calculator, zodiac sign, age in years months days, online calculator" />
-<meta name="author" content="AllToolsOnline" />
-<link rel="canonical" href="https://www.alltoolsonline.example/tools/calculators/age-calculator.html" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="Advanced Age Calculator | Exact Age & Date Difference" />
-<meta property="og:description" content="Free online age calculator to find your exact age, next birthday, and zodiac sign." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.alltoolsonline.example/tools/calculators/age-calculator.html" />
-<meta property="og:site_name" content="AllToolsOnline" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Advanced Age Calculator | Exact Age & Date Difference" />
-<meta name="twitter:description" content="Free online age calculator with zodiac and next birthday info." />
-
-<!-- JSON-LD Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Advanced Age Calculator",
-  "description": "Find your exact age in years, months, and days. Compare two dates, check next birthday and zodiac sign instantly with our free age calculator.",
-  "url": "https://www.alltoolsonline.example/tools/calculators/age-calculator.html",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Age Calculator",
+    "description": "Calculate your exact age in years, months, days, hours, minutes, and seconds instantly.",
+    "url": "https://www.alltoolsonline.example/tools/calculators/age-calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
-}
-</script>
+  </script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WJ7765FV');</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WJ7765FV');</script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLEW4JXY4"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-9NLEW4JXY4');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLEW4JXY4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9NLEW4JXY4');
+  </script>
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Theme -->
-<script>(function(){document.documentElement.setAttribute('data-theme','light');document.body.setAttribute('data-theme','light');localStorage.removeItem('theme');})();</script>
+  <!-- Theme -->
+  <script>
+    (function() {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.body?.setAttribute('data-theme', 'light');
+      localStorage.removeItem('theme');
+    })();
+  </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/common.css">
 </head>
 
 <body class="min-h-screen text-gray-800" data-theme="light">
+  <!-- GTM NoScript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ7765FV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- GTM (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ7765FV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div id="header-placeholder"></div>
 
-<!-- HEADER -->
-<div id="header-placeholder"></div>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <nav class="text-sm mb-6" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-600">
+        <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+        <li>›</li>
+        <li><a href="../../categories.html#calculators" class="hover:text-indigo-600">Calculators</a></li>
+        <li>›</li>
+        <li class="text-gray-900 font-medium">Age Calculator</li>
+      </ol>
+    </nav>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-  <!-- Breadcrumb -->
-  <nav class="text-sm mb-6" aria-label="Breadcrumb">
-    <ol class="flex items-center gap-2 text-gray-600">
-      <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
-      <li>›</li>
-      <li><a href="../../categories.html#calculators" class="hover:text-indigo-600">Calculators</a></li>
-      <li>›</li>
-      <li class="text-gray-900 font-medium">Advanced Age Calculator</li>
-    </ol>
-  </nav>
-
-  <div class="grid lg:grid-cols-3 gap-8">
-    <!-- Main Tool Area -->
-    <div class="lg:col-span-2">
-      <!-- Tool Header -->
-      <div class="mb-6">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-4xl">🎂</span>
-          <h1 class="text-3xl font-bold">Advanced Age Calculator</h1>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Main Area -->
+      <div class="lg:col-span-2">
+        <div class="mb-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-4xl">🎂</span>
+            <h1 class="text-3xl font-bold">Age Calculator</h1>
+          </div>
+          <p class="text-gray-600">Calculate your exact age from date of birth — in years, months, days, hours, minutes, and seconds.</p>
         </div>
-        <p class="text-gray-600">Calculate exact age in years, months and days. Compare dates, check next birthday and find your zodiac sign instantly.</p>
+
+        <!-- Calculator -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2">Enter Date of Birth</label>
+              <div class="flex flex-wrap gap-3">
+                <select id="dob-day" class="tool-input w-24"><option value="">Day</option></select>
+                <select id="dob-month" class="tool-input w-40">
+                  <option value="">Month</option>
+                  <option value="0">January</option><option value="1">February</option><option value="2">March</option>
+                  <option value="3">April</option><option value="4">May</option><option value="5">June</option>
+                  <option value="6">July</option><option value="7">August</option><option value="8">September</option>
+                  <option value="9">October</option><option value="10">November</option><option value="11">December</option>
+                </select>
+                <select id="dob-year" class="tool-input w-28"><option value="">Year</option></select>
+              </div>
+            </div>
+
+            <button onclick="calculateAge()" class="tool-button w-full">Calculate Age</button>
+
+            <div id="result" class="result-box hidden mt-4"></div>
+          </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="mt-8 prose max-w-none text-gray-700">
+          <h2 class="text-2xl font-bold mb-4">About Age Calculator</h2>
+          <p>
+            The Age Calculator is a free online tool that instantly tells you your exact age in years, months, days, hours, minutes, and even seconds. Whether you’re checking your age for official forms, medical records, or just curiosity, this calculator gives you precise results without sign-up or data tracking.
+          </p>
+          <p>
+            Here’s how it works. You enter your date of birth using the dropdowns above. The system compares your DOB with the current date and computes the total difference across time units. Everything happens locally on your device — no personal data is uploaded or stored anywhere.
+          </p>
+          <p>
+            Many people use the age calculator to find their age for school admissions, government exams, or retirement planning. It’s also useful for comparing the age gap between two people, checking leap-year birthdays, and tracking exact time differences.
+          </p>
+          <p>
+            Unlike many sites that just show years and months, this calculator goes a step further by giving you seconds too — so you can literally see your age ticking forward in real time. The layout is designed for clarity, works smoothly on both phones and desktops, and loads instantly without ads or distractions.
+          </p>
+          <p>
+            This tool is part of the <strong>AllToolsOnline</strong> collection, built to make everyday calculations effortless. If you find it useful, explore more tools in our calculators section — from BMI and percentage calculators to EMI estimators.
+          </p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="mt-8">
+          <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">How accurate is this Age Calculator?</h3>
+              <p class="text-gray-700">It’s fully accurate to the second. The calculation uses JavaScript’s built-in date logic to handle leap years and time zones correctly.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Is my information saved anywhere?</h3>
+              <p class="text-gray-700">No. All calculations happen locally in your browser. Your date of birth is never sent or stored on our servers.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Can I use this tool on mobile?</h3>
+              <p class="text-gray-700">Yes, the page is responsive and optimized for all devices including Android, iPhone, and tablets.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">What if I want to calculate the age between two dates?</h3>
+              <p class="text-gray-700">We’re adding that soon! For now, you can select your birth date, note the age, then change the “current” date manually in developer mode for custom comparisons.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Why do you show seconds?</h3>
+              <p class="text-gray-700">Because age isn’t static — it’s constantly changing. Showing seconds gives a live, dynamic sense of how time moves.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Tool Interface -->
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-        <div class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium mb-2">Date of Birth</label>
-            <input type="date" id="dob" class="tool-input">
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 sticky top-20">
+          <h3 class="text-lg font-semibold mb-4">Similar Tools</h3>
+          <div class="space-y-3">
+            <a href="percentage-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">%</div>
+                <div class="flex-1">
+                  <div class="font-semibold text-sm">Percentage Calculator</div>
+                  <div class="mt-1 text-xs text-gray-500">Quick percent calculations</div>
+                </div>
+                <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+              </div>
+            </a>
+            <a href="bmi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">⚖️</div>
+                <div class="flex-1">
+                  <div class="font-semibold text-sm">BMI Calculator</div>
+                  <div class="mt-1 text-xs text-gray-500">Body Mass Index calculator</div>
+                </div>
+                <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+              </div>
+            </a>
+            <a href="loan-emi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">🏦</div>
+                <div class="flex-1">
+                  <div class="font-semibold text-sm">Loan EMI Calculator</div>
+                  <div class="mt-1 text-xs text-gray-500">Monthly EMI estimates</div>
+                </div>
+                <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+              </div>
+            </a>
+            <a href="simple-interest-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">📈</div>
+                <div class="flex-1">
+                  <div class="font-semibold text-sm">Simple Interest Calculator</div>
+                  <div class="mt-1 text-xs text-gray-500">Simple interest on principal</div>
+                </div>
+                <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
+              </div>
+            </a>
           </div>
-          <div>
-            <label class="block text-sm font-medium mb-2">Compare To (optional)</label>
-            <input type="date" id="toDate" class="tool-input" placeholder="Leave empty for today">
-          </div>
-
-          <div class="flex gap-3">
-            <button onclick="calculateAge()" class="tool-button flex-1">Calculate Age</button>
-            <button onclick="clearInputs()" class="tool-button bg-gray-100 text-gray-800">Clear</button>
-          </div>
-
-          <div id="result" class="result-box hidden"></div>
+          <a href="../../categories.html#calculators" class="block mt-4 text-center text-sm text-indigo-600 hover:text-indigo-700 font-medium">View all Calculators →</a>
         </div>
       </div>
-
-      <!-- SEO Content (approx 500 words) -->
-      <article class="mt-8 prose max-w-none">
-        <h2 class="text-2xl font-bold mb-3">What this calculator does</h2>
-        <p>
-          This tool gives an accurate age breakdown from any date of birth: years, months and days, plus total months, total days, weeks, hours and minutes.
-          It also lets you compare any two dates (handy for contracts, eligibility checks or historical comparisons), tells you the weekday you were born on, and displays your western zodiac sign.
-        </p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-2">When to use it</h3>
-        <p>
-          Use it when you need precise age calculations for applications (school, job eligibility, visas), for event planning (counting days to an anniversary or birthday), or for curiosity — for example, “How many days old am I?”.
-          Because calculations run in the browser, your data never leaves your device.
-        </p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-2">Examples</h3>
-        <p>
-          1) If you were born on 1990-05-17 and compare to today, the tool returns your age in years, months, days and shows totals in days, weeks and hours.
-          2) For two historical dates you can check exact difference — useful for counting service duration or project timelines.
-        </p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-2">How accurate is it?</h3>
-        <p>
-          Accuracy follows the Gregorian calendar rules used by JavaScript Date. Months are calculated using calendar month lengths; total months uses a 30.4375 average month for a useful approximation when presenting totals.
-        </p>
-      </article>
-
-      <!-- FAQ Section (expanded, quality Q&A) -->
-      <section class="mt-8">
-        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-        <div class="bg-white rounded-2xl border border-gray-200 p-6 space-y-4">
-
-          <div>
-            <div class="font-semibold">Q: Can I compare two historical dates (not including today)?</div>
-            <div class="text-gray-700 mt-1">A: Yes. Enter a birth date and a custom 'Compare To' date to calculate the exact difference between any two dates. If 'Compare To' is left blank, the calculator uses the current date and time.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: Why do totals (months/days) sometimes differ from a simple year-month-day breakdown?</div>
-            <div class="text-gray-700 mt-1">A: A year-month-day split respects calendar month lengths (28–31 days). Total days and total months are separate aggregate values—totals use a consistent conversion (days and an average month length) so users see both precise calendar difference and useful cumulative numbers.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: Are leap years handled correctly?</div>
-            <div class="text-gray-700 mt-1">A: Yes. Leap days are part of the JavaScript Date arithmetic used here, so the difference in days accounts for February 29 where applicable.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: Is this tool private — do you store my DOB?</div>
-            <div class="text-gray-700 mt-1">A: No. Calculations run locally in your browser. We do not transmit or store the dates you enter.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: What calendar does this use?</div>
-            <div class="text-gray-700 mt-1">A: It uses the modern Gregorian calendar (the standard for most web and civil use). For historical dates before adoption in some regions, results reflect proleptic Gregorian calculations.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: How is the zodiac sign determined?</div>
-            <div class="text-gray-700 mt-1">A: Zodiac is based on western sun-sign date ranges (Aries, Taurus, etc.). The calculator shows the sign corresponding to the birth month and day.</div>
-          </div>
-
-          <div>
-            <div class="font-semibold">Q: Can I copy the result to share?</div>
-            <div class="text-gray-700 mt-1">A: Yes — use your browser selection or the built-in copy action (we can add a copy button on demand).</div>
-          </div>
-
-        </div>
-      </section>
     </div>
+  </main>
 
-    <!-- Sidebar (Similar Tools - preserved and expanded if needed) -->
-    <div class="lg:col-span-1">
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 sticky top-20">
-        <h3 class="text-lg font-semibold mb-4">Similar Tools</h3>
-        <div class="space-y-3">
-          <a href="percentage-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
-            <div class="flex items-start gap-3">
-              <div class="text-2xl">%</div>
-              <div class="flex-1">
-                <div class="font-semibold text-sm">Percentage Calculator</div>
-                <div class="mt-1 text-xs text-gray-500">Quick percent calculations</div>
-              </div>
-              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
-            </div>
-          </a>
+  <div id="footer-placeholder"></div>
+  <script src="../../assets/js/common.js"></script>
 
-          <a href="bmi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
-            <div class="flex items-start gap-3">
-              <div class="text-2xl">⚖️</div>
-              <div class="flex-1">
-                <div class="font-semibold text-sm">BMI Calculator</div>
-                <div class="mt-1 text-xs text-gray-500">Body Mass Index calculator</div>
-              </div>
-              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
-            </div>
-          </a>
-
-          <a href="loan-emi-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
-            <div class="flex items-start gap-3">
-              <div class="text-2xl">🏦</div>
-              <div class="flex-1">
-                <div class="font-semibold text-sm">Loan EMI Calculator</div>
-                <div class="mt-1 text-xs text-gray-500">Monthly EMI estimates</div>
-              </div>
-              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
-            </div>
-          </a>
-
-          <a href="simple-interest-calculator.html" class="tool-card group block bg-white border border-gray-100 rounded-2xl p-4 transition">
-            <div class="flex items-start gap-3">
-              <div class="text-2xl">📈</div>
-              <div class="flex-1">
-                <div class="font-semibold text-sm">Simple Interest Calculator</div>
-                <div class="mt-1 text-xs text-gray-500">Simple interest on principal</div>
-              </div>
-              <div class="ml-3 text-gray-300 group-hover:text-indigo-500">›</div>
-            </div>
-          </a>
-
-        </div>
-
-        <a href="../../categories.html#calculators" class="block mt-4 text-center text-sm text-indigo-600 hover:text-indigo-700 font-medium">View all Calculators →</a>
-      </div>
-    </div>
-
-  </div>
-</main>
-
-<div id="footer-placeholder"></div>
-
-<script src="../../assets/js/common.js"></script>
-
-<script>
-/* Core calculation and UI updates */
-function calculateAge() {
-  const dobVal = document.getElementById('dob').value;
-  const toDateVal = document.getElementById('toDate').value;
-  const resultBox = document.getElementById('result');
-
-  if (!dobVal) {
-    resultBox.innerHTML = '<p class="text-red-500">Please select your date of birth</p>';
-    resultBox.classList.remove('hidden');
-    return;
-  }
-
-  const birthDate = new Date(dobVal + 'T00:00:00');
-  const compareDate = toDateVal ? new Date(toDateVal + 'T00:00:00') : new Date();
-
-  if (compareDate < birthDate) {
-    resultBox.innerHTML = '<p class="text-red-500">Compare date cannot be before date of birth</p>';
-    resultBox.classList.remove('hidden');
-    return;
-  }
-
-  // Calculate YMD
-  let years = compareDate.getFullYear() - birthDate.getFullYear();
-  let months = compareDate.getMonth() - birthDate.getMonth();
-  let days = compareDate.getDate() - birthDate.getDate();
-
-  if (days < 0) {
-    months--;
-    // days in previous month
-    const prevMonthLastDay = new Date(compareDate.getFullYear(), compareDate.getMonth(), 0).getDate();
-    days += prevMonthLastDay;
-  }
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  // Totals
-  const diffMs = compareDate.getTime() - birthDate.getTime();
-  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-  const totalWeeks = Math.floor(totalDays / 7);
-  const totalHours = Math.floor(diffMs / (1000 * 60 * 60));
-  const totalMinutes = Math.floor(diffMs / (1000 * 60));
-
-  // Next birthday (relative to compareDate)
-  let nextBday = new Date(compareDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-  if (nextBday < compareDate) nextBday.setFullYear(compareDate.getFullYear() + 1);
-  const daysUntilBirthday = Math.ceil((nextBday - compareDate) / (1000 * 60 * 60 * 24));
-  const birthWeekday = birthDate.toLocaleString('default', { weekday: 'long' });
-
-  // Zodiac
-  const zodiacRanges = [
-    [120, "Capricorn"], [218, "Aquarius"], [320, "Pisces"], [420, "Aries"],
-    [521, "Taurus"], [621, "Gemini"], [722, "Cancer"], [822, "Leo"],
-    [923, "Virgo"], [1023, "Libra"], [1122, "Scorpio"], [1222, "Sagittarius"], [1231, "Capricorn"]
-  ];
-  const md = (birthDate.getMonth() + 1) * 100 + birthDate.getDate();
-  const zodiac = zodiacRanges.find(([cut]) => md <= cut)?.[1] || "Capricorn";
-
-  // Render result
-  resultBox.innerHTML = `
-    <div class="text-center space-y-2">
-      <div class="text-2xl font-bold text-indigo-600">${years} years, ${months} months, ${days} days</div>
-      <p class="text-gray-700">Total: ${Math.floor(totalDays / 30.4375)} months | ${totalDays.toLocaleString()} days | ${totalWeeks.toLocaleString()} weeks</p>
-      <p class="text-gray-700">≈ ${totalHours.toLocaleString()} hours or ${totalMinutes.toLocaleString()} minutes</p>
-      <p class="mt-3 text-gray-700">Born on: <strong>${birthWeekday}</strong> • Zodiac: <strong>${zodiac}</strong></p>
-      <p class="mt-2 text-gray-600">Next birthday in ${daysUntilBirthday} days</p>
-    </div>
-  `;
-  resultBox.classList.remove('hidden');
-}
-
-/* Utility: clear fields & result */
-function clearInputs() {
-  document.getElementById('dob').value = '';
-  document.getElementById('toDate').value = '';
-  const resultBox = document.getElementById('result');
-  resultBox.innerHTML = '';
-  resultBox.classList.add('hidden');
-}
-
-/* Reveal result zone if JS writes content from other scripts */
-document.addEventListener('DOMContentLoaded', function() {
-  const resultBox = document.getElementById('result');
-  if (resultBox) {
-    const observer = new MutationObserver(function() {
-      if (resultBox.innerHTML.trim() !== '') resultBox.classList.remove('hidden');
+  <script>
+    // Populate day & year dropdowns
+    document.addEventListener('DOMContentLoaded', function() {
+      const daySelect = document.getElementById('dob-day');
+      const yearSelect = document.getElementById('dob-year');
+      for (let d = 1; d <= 31; d++) daySelect.innerHTML += `<option value="${d}">${d}</option>`;
+      const currentYear = new Date().getFullYear();
+      for (let y = currentYear; y >= 1900; y--) yearSelect.innerHTML += `<option value="${y}">${y}</option>`;
     });
-    observer.observe(resultBox, { childList: true, subtree: true });
-  }
-});
-</script>
+
+    function calculateAge() {
+      const day = parseInt(document.getElementById('dob-day').value);
+      const month = parseInt(document.getElementById('dob-month').value);
+      const year = parseInt(document.getElementById('dob-year').value);
+
+      if (!day || isNaN(month) || !year) {
+        document.getElementById('result').innerHTML = '<p class="text-red-500">Please enter your full date of birth.</p>';
+        document.getElementById('result').classList.remove('hidden');
+        return;
+      }
+
+      const dob = new Date(year, month, day);
+      const now = new Date();
+      let ageYears = now.getFullYear() - dob.getFullYear();
+      let ageMonths = now.getMonth() - dob.getMonth();
+      let ageDays = now.getDate() - dob.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        ageDays += prevMonth.getDate();
+      }
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+
+      const diffMs = now - dob;
+      const seconds = Math.floor(diffMs / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+
+      document.getElementById('result').innerHTML = `
+        <div class="text-center">
+          <div class="text-3xl font-bold text-indigo-600 mb-2">${ageYears} Years ${ageMonths} Months ${ageDays} Days</div>
+          <p class="text-gray-600">That's approximately ${hours.toLocaleString()} hours, ${minutes.toLocaleString()} minutes, or ${seconds.toLocaleString()} seconds old.</p>
+        </div>`;
+      document.getElementById('result').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
