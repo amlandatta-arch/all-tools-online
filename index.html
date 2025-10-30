@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
   <title>AllToolsOnline — All Tools</title>
 
   <!-- Primary SEO -->
@@ -43,7 +44,28 @@
 
   <style>
     :root { --bg: #f7fafc; --card: #ffffff; --muted: #6b7280; }
-    [data-theme="dark"] { --bg: #0b1220; --card: #1a2332; --muted: #d1d5db; color-scheme: dark; }
+    
+    /* Force light theme - override system dark mode */
+    html, body { 
+      background: #f7fafc !important; 
+      color: #1f2937 !important; 
+      color-scheme: light !important;
+    }
+    
+    /* Override system dark mode preference */
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        background: #f7fafc !important;
+        color: #1f2937 !important;
+        color-scheme: light !important;
+      }
+      :root {
+        --bg: #f7fafc !important;
+        --card: #ffffff !important;
+        --muted: #6b7280 !important;
+      }
+    }
+    
     body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
     .tool-card { transition: transform .14s ease, box-shadow .14s ease; }
     .tool-card:focus-within, .tool-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(15,23,42,0.08); }
