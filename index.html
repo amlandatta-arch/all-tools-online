@@ -624,10 +624,11 @@
       // button submits the form naturally
     });
 
-    // Theme toggle
+    // Theme toggle - default to light theme
     const themeToggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme ? savedTheme : 'light';
+    document.body.setAttribute('data-theme', theme);
     
     themeToggle.addEventListener('click', () => {
       const root = document.body;
