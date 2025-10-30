@@ -8,15 +8,25 @@ function generateSlug(name) {
     .replace(/^-+|-+$/g, '');
 }
 
+// Get base path based on current location
+function getBasePath() {
+  const path = window.location.pathname;
+  if (path.includes('/tools/')) {
+    return '../../';
+  }
+  return '';
+}
+
 // Load header
 function loadHeader() {
+  const basePath = getBasePath();
   const headerHTML = `
     <header class="sticky top-0 backdrop-blur bg-white/60 dark:bg-[#071022]/60 border-b border-gray-200 dark:border-gray-800 z-30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-4 h-16">
           <!-- Logo -->
           <div class="flex items-center w-48">
-            <a href="/index.html" class="flex items-center gap-2" aria-label="AllToolsOnline home">
+            <a href="${basePath}index.html" class="flex items-center gap-2" aria-label="AllToolsOnline home">
               <div class="rounded-md bg-gradient-to-br from-indigo-500 to-purple-500 w-10 h-10 flex items-center justify-center text-white font-bold">AT</div>
               <div class="text-lg font-semibold">AllToolsOnline</div>
             </a>
@@ -32,10 +42,10 @@ function loadHeader() {
 
           <!-- Nav & theme -->
           <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
-            <a href="/index.html" class="text-sm font-medium hover:text-indigo-600">Home</a>
-            <a href="/categories.html" class="text-sm font-medium hover:text-indigo-600">Categories</a>
-            <a href="/about.html" class="text-sm font-medium hover:text-indigo-600">About</a>
-            <a href="/contact.html" class="text-sm font-medium hover:text-indigo-600">Contact</a>
+            <a href="${basePath}index.html" class="text-sm font-medium hover:text-indigo-600">Home</a>
+            <a href="${basePath}categories.html" class="text-sm font-medium hover:text-indigo-600">Categories</a>
+            <a href="${basePath}about.html" class="text-sm font-medium hover:text-indigo-600">About</a>
+            <a href="${basePath}contact.html" class="text-sm font-medium hover:text-indigo-600">Contact</a>
 
             <!-- Theme toggle -->
             <button id="theme-toggle" class="p-2 rounded-full border border-gray-200 dark:border-gray-700" title="Toggle theme" aria-pressed="false">
@@ -57,10 +67,10 @@ function loadHeader() {
       <!-- Mobile nav -->
       <div id="mobile-nav" class="md:hidden hidden border-t border-gray-100 dark:border-gray-800" role="menu" aria-hidden="true">
         <div class="px-4 py-3 flex flex-col gap-2">
-          <a href="/index.html" class="py-2">Home</a>
-          <a href="/categories.html" class="py-2">Categories</a>
-          <a href="/about.html" class="py-2">About</a>
-          <a href="/contact.html" class="py-2">Contact</a>
+          <a href="${basePath}index.html" class="py-2">Home</a>
+          <a href="${basePath}categories.html" class="py-2">Categories</a>
+          <a href="${basePath}about.html" class="py-2">About</a>
+          <a href="${basePath}contact.html" class="py-2">Contact</a>
         </div>
       </div>
     </header>
@@ -75,15 +85,16 @@ function loadHeader() {
 
 // Load footer
 function loadFooter() {
+  const basePath = getBasePath();
   const currentYear = new Date().getFullYear();
   const footerHTML = `
     <footer class="border-t border-gray-200 dark:border-gray-800 mt-12 py-8 bg-white/50 dark:bg-[#071022]/50" role="contentinfo">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="text-sm text-gray-600 dark:text-gray-400">© ${currentYear} AllToolsOnline. All rights reserved.</div>
         <div class="flex items-center gap-4">
-          <a href="/privacy.html" class="text-sm hover:underline">Privacy Policy</a>
-          <a href="/terms.html" class="text-sm hover:underline">Terms</a>
-          <a href="/contact.html" class="text-sm hover:underline">Contact</a>
+          <a href="${basePath}privacy.html" class="text-sm hover:underline">Privacy Policy</a>
+          <a href="${basePath}terms.html" class="text-sm hover:underline">Terms</a>
+          <a href="${basePath}contact.html" class="text-sm hover:underline">Contact</a>
         </div>
         <div class="text-sm text-gray-600 dark:text-gray-400">Built with ❤️ by AllToolsOnline</div>
       </div>
@@ -102,10 +113,11 @@ function initHeaderEvents() {
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
   
-  // Load saved theme
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.body.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+  // Load saved theme - always default to light if no preference saved
+  const savedTheme = localStorage.getItem('theme');
+  const theme = savedTheme ? savedTheme : 'light';
+  document.body.setAttribute('data-theme', theme);
+  updateThemeIcon(theme);
   
   themeToggle.addEventListener('click', () => {
     const current = document.body.getAttribute('data-theme') || 'light';
@@ -148,7 +160,8 @@ function initHeaderEvents() {
       window.dispatchEvent(new CustomEvent('headerSearch', { detail: { query } }));
     } else {
       // Redirect to home with search query
-      window.location.href = `/index.html?q=${encodeURIComponent(query)}`;
+      const basePath = getBasePath();
+      window.location.href = `${basePath}index.html?q=${encodeURIComponent(query)}`;
     }
   });
   
