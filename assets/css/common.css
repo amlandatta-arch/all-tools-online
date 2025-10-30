@@ -4,11 +4,23 @@
   --muted: #6b7280; 
 }
 
+/* Force light theme as default */
+html, body {
+  background: #f7fafc;
+  color: #1f2937;
+}
+
 [data-theme="dark"] { 
   --bg: #0b1220; 
   --card: #071022; 
   --muted: #9ca3af; 
   color-scheme: dark; 
+}
+
+[data-theme="dark"] html,
+[data-theme="dark"] body {
+  background: #0b1220;
+  color: #f3f4f6;
 }
 
 body { 
@@ -43,6 +55,19 @@ body {
   .hero-illustration { 
     height: 220px; 
     border-radius: 16px; 
+  }
+  
+  /* Increase brand name size on mobile */
+  header .text-lg {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Increase logo icon size on mobile */
+  header .w-10 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 0.875rem !important;
   }
 }
 
