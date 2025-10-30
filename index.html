@@ -29,6 +29,15 @@
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Set theme IMMEDIATELY before page renders -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const theme = savedTheme || 'light'; // Default to light if nothing saved
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -46,8 +55,8 @@
       .hero-illustration { height: 220px; border-radius: 16px; }
       header .flex { gap: 0.5rem; padding: 0.5rem 0; }
       header .w-48 { width: auto; min-width: 0; flex-shrink: 1; }
-      header .text-lg { font-size: 0.85rem; white-space: nowrap; }
-      header .w-10 { width: 2rem; height: 2rem; font-size: 0.7rem; }
+      header .text-lg { font-size: 1.1rem; white-space: nowrap; font-weight: 600; }
+      header .w-10 { width: 2.5rem; height: 2.5rem; font-size: 0.875rem; }
       #header-search { display: none; }
       main { padding-top: 1rem; padding-bottom: 1rem; }
       main .px-4 { padding-left: 0.75rem; padding-right: 0.75rem; }
